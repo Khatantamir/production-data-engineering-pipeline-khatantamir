@@ -101,6 +101,8 @@ This project demonstrates how to build a simple data pipeline using Python.
 
 It shows how raw data can be turned into clean, usable data for analysis.
 
+This pipeline includes logging and error handling to simulate a production-ready data workflow.
+
 ---
 
 ## Author

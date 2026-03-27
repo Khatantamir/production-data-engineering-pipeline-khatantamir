@@ -20,10 +20,10 @@ try:
     st.write("This pipeline extracts raw data, transforms it into clean data, adds a new feature column, loads it into storage, and visualizes the final output.")
 
     st.subheader("Raw Data Preview")
-    st.dataframe(raw_df.head(10), width="stretch")
+    st.dataframe(raw_df.head(10), use_container_width=True)
 
     st.subheader("Clean Data Preview")
-    st.dataframe(clean_df.head(10), width="stretch")
+    st.dataframe(clean_df.head(10), use_container_width=True)
 
     st.subheader("Key Metrics")
     total_revenue = clean_df["total_bill"].sum()
@@ -39,16 +39,16 @@ try:
 
     st.subheader("Total Bill by Day")
     sales_by_day = clean_df.groupby("day")["total_bill"].sum()
-    st.bar_chart(sales_by_day, width="stretch")
+    st.bar_chart(sales_by_day, use_container_width=True)
 
     st.subheader("Average Tip by Day")
     avg_tip_by_day = clean_df.groupby("day")["tip"].mean()
-    st.bar_chart(avg_tip_by_day, width="stretch")
+    st.bar_chart(avg_tip_by_day, use_container_width=True)
 
     st.subheader("Filter by Day")
     selected_day = st.selectbox("Select Day", clean_df["day"].unique())
     filtered_df = clean_df[clean_df["day"] == selected_day]
-    st.dataframe(filtered_df, width="stretch")
+    st.dataframe(filtered_df, use_container_width=True)
 
     st.subheader("Dataset Info")
     st.write(f"Rows: {clean_df.shape[0]}")
